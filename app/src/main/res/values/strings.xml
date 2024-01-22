@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">HelloWrld</string>
+    <string name="action">Action</string>
+    <string name="follow">Follow</string>
+    <string name="stop_follow">Stop Follow</string>
+    <string name="off_on">Off/On?</string>
+    <string name="bing_bong">Bing Bong</string>
+    <string name="on">On</string>
+    <string name="take_out_trash">Take Out Trash</string>
+    <string name="off">Off</string>
+    <string name="follow_me">Follow Me</string>
+    <string name="Idle">Idle</string>
+    <string name="Power">Power</string>
+    <string name="switch_activated">Switch Activated</string>
+    <string name="switch_not_activated">Switch not Activated</string>
+</resources>
