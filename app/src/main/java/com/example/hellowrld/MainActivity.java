@@ -7,6 +7,13 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.net.Socket;
+import android.os.StrictMode;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
@@ -31,9 +38,22 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Button Clicked");
     }
     @SuppressLint("SetTextI18n")
-    public void takeTrash(View view){
+    public void takeTrash(View view) throws IOException {
         if(aSwitch.isChecked()){
             textView.setText("Taking Out Trash!");
+
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+
+            Socket socket = new Socket("192.168.1.145", 50505);
+
+            PrintStream printer = new PrintStream(socket.getOutputStream(), true);
+            printer.write("Hello from android\n".getBytes());
+            //Thread.sleep(50000L);
+            printer.close();
+
+            socket.close();
+
         } else {
             textView.setText("Please turn on Power First!");
         }
