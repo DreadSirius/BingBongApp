@@ -8,9 +8,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.PrintStream;
-import java.io.PrintWriter;
 import java.net.Socket;
 import android.os.StrictMode;
 
